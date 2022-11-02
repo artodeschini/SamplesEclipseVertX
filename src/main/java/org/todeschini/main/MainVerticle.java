@@ -21,7 +21,7 @@ public class MainVerticle extends AbstractVerticle {
   @Override
   public void start(Promise<Void> startPromise) throws Exception {
     //super.start(startPromise);
-    LOG.debug("Start vertx " + this.getClass().getName());
+    System.out.println("Start vertx " + this.getClass().getName());
     vertx.deployVerticle(new VerticleA());
     vertx.deployVerticle(new VerticleB());
 

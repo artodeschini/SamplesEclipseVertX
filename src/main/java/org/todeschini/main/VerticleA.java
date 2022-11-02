@@ -10,13 +10,13 @@ public class VerticleA extends AbstractVerticle {
   private static final Logger LOG = LoggerFactory.getLogger(VerticleA.class);
   @Override
   public void start(Promise<Void> startPromise) throws Exception {
-    LOG.debug("Start vertx " + this.getClass().getName());
+    System.out.println("Start vertx " + this.getClass().getName());
     vertx.deployVerticle(new VerticleAA(), whenDeployed -> {
       System.out.println("Deploy " + VerticleAA.class.getName());
       vertx.undeploy(whenDeployed.result());
     });
     vertx.deployVerticle(new VerticleAB(), whenDeployed -> {
-      LOG.debug("Deploy " + VerticleAB.class.getName());
+      System.out.println("Deploy " + VerticleAB.class.getName());
       // Do nothing
       // vertx.undeploy(whenDeployed.result());
     });
